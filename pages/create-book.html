@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-zinc-900 text-white">
+    <header class="fixed text-white top-0 left-0 w-full bg-black h-16 p-4 z-10">
+      <ul class="flex justify-center h-full items-center text-lg md:text-xl">
+        <li class="mx-5 md:mx-20">
+          <a href="dashboard.html" class="hover:text-lime-50">Dashboard</a>
+        </li>
+        <li class="mx-5 md:mx-20">
+          <a class="hover:text-lime-50" href="login.html">Login</a>
+        </li>
+        <li class="mx-5 md:mx-20">
+          <a href="register.html" class="hover:text-lime-50">Register</a>
+        </li>
+      </ul>
+    </header>
+    <main class="pt-20 px-4">
+      <h1 class="text-3xl font-semibold mb-8">Create New Book</h1>
+      <form id="createBookForm" onsubmit="handleCreateBook(event)">
+        <div class="mb-4">
+          <label for="title" class="block text-white text-sm font-bold mb-1"
+            >Title of the Book</label
+          >
+          <input
+            type="text"
+            id="title"
+            class="w-full p-2 border rounded bg-zinc-900 text-white"
+            placeholder="Enter the title"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="author" class="block text-white text-sm font-bold mb-1"
+            >Author of the Book</label
+          >
+          <input
+            type="text"
+            id="author"
+            class="w-full p-2 border rounded bg-zinc-900 text-white"
+            placeholder="Enter the author"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600"
+        >
+          Create Book
+        </button>
+      </form>
+    </main>
+    <script>
+      async function handleCreateBook(e) {
+        e.preventDefault();
+        const title = document.getElementById("title").value;
+        const author = document.getElementById("author").value;
+        const token = localStorage.getItem("token");
+        try {
+          const data = { title: title, author: author };
+          const response= await fetch("http://127.0.0.1:8000/api/books/", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+          if (response.status == 201) {
+            console.log("Book created");
+            window.location.href = "dashboard.html";
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    </script>
+  </body>
+</html>

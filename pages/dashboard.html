@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="../assets/scripts/dashboard.js"></script>
+  </head>
+  <body class="bg-zinc-900 text-white">
+    <header class="fixed text-white top-0 left-0 w-full bg-black h-16 p-4 z-10">
+      <ul class="flex justify-center h-full items-center text-lg md:text-xl">
+        <li class="mx-5 md:mx-20">
+          <a href="dashboard.html" class="hover:text-lime-50">Dashboard</a>
+        </li>
+        <li class="mx-5 md:mx-20">
+          <a class="hover:text-lime-50" href="login.html">Login</a>
+        </li>
+        <li class="mx-5 md:mx-20">
+          <a href="register.html" class="hover:text-lime-50">Register</a>
+        </li>
+      </ul>
+    </header>
+    <main class="pt-20 px-4">
+        <h1 class="text-3xl font-semibold mb-8">Dashboard</h1>
+        <h3>Books</h3>
+        <a href="create-book.html" class="bg-blue-500 mt-2 text-white px-4 py-2 rounded-full hover:bg-blue-600">Create New Book</a>
+        <div id="bookList" class="mb-8 mt-4">
+          <!-- Book list will be displayed here -->
+        </div>
+        <h3>Members</h3>
+        <div id="memberList" class="">
+          <!-- Member list will be displayed here -->
+        </div>
+        <h3>All Books</h3>
+        <div id="allBooks" class=""></div>
+        <h3>Borrowed Books</h3>
+        <div id="borrowedBooks" class=""></div>
+      </main>
+  </body>
+</html>
