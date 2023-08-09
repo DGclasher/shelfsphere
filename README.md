@@ -1,2 +1,5 @@
-# shelfsphere
-client for shelfsphere library management API
+# ShelfSphere
+
+Client for the ShelfSphere API
+
+#### Deployment: [shelfsphere.netlify.app](https://shelfsphere.netlify.app)

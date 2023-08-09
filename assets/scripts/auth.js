@@ -1,4 +1,4 @@
-const baseUrl = "http://127.0.0.1:8000/auth";
+const baseUrl = "https://shelfsphere.pythonanywhere.com/auth";
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", async (e) => {

@@ -1,4 +1,4 @@
-const baseUrl = "http://127.0.0.1:8000/api";
+const baseUrl = "https://shelfsphere.pythonanywhere.com/api";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (!localStorage.getItem("token")) {
@@ -180,10 +180,13 @@ async function handleBorrowReturn(event) {
   const token = localStorage.getItem("token");
 
   try {
-    const data = { "book_ids": [id] };
+    const data = { book_ids: [id] };
     const response = await fetch(baseUrl + endpoint, {
       method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(data),
     });
   } catch (error) {
