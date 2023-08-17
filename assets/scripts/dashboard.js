@@ -1,4 +1,4 @@
-const baseUrl = "https://shelfsphere.pythonanywhere.com/api";
+const baseUrl = "https://shelfsphere.vercel.app/api";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (!localStorage.getItem("token")) {

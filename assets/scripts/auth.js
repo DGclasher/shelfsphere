@@ -1,4 +1,4 @@
-const baseUrl = "https://shelfsphere.pythonanywhere.com/auth";
+const baseUrl = "https://shelfsphere.vercel.app/auth";
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", async (e) => {
