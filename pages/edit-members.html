@@ -52,7 +52,7 @@
           .value.split(",");
         const data = { borrowed_books: borrowed_books };
         try {
-          const response = await fetch(endpoint + id + "/", {
+          const response = await fetch("https://shelfsphere.vercel.app/api" + endpoint + id + "/", {
             method: "PUT",
             headers: {
               Authorization: `Bearer ${token}`,

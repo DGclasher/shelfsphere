@@ -91,7 +91,7 @@ async function handleEditButtonClick(event) {
   const endPoint = targetButton.getAttribute("endpoint");
   const editUrl = `/shelfsphere/pages/edit-${
     endPoint.split("/")[1]
-  }.html?endpoint=${baseUrl}${endPoint}&id=${id}`;
+  }.html?endpoint=${endPoint}&id=${id}`;
   window.location.href = editUrl;
 }
 

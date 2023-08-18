@@ -57,14 +57,13 @@
       const endpoint = params.get("endpoint");
       const id = params.get("id");
       async function handleUpdate(e) {
-        console.log("ran");
         e.preventDefault();
         const token = localStorage.getItem("token");
         const title = document.getElementById("title").value;
         const author = document.getElementById("author").value;
         const data = { title: title, author: author };
         try {
-          const response = await fetch(endpoint + id + "/", {
+          const response = await fetch("https://shelfsphere.vercel.app/api" + endpoint + id + "/", {
             method: "PUT",
             headers: {
               Authorization: `Bearer ${token}`,
